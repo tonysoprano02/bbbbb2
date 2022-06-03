@@ -1,0 +1,21 @@
+name: Build & Publish Debug APK
+
+on:
+ push:
+  branches:
+   - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1     
+      - name: Use coturiv/setup-ionic
+        uses: coturiv/setup-ionic@v1
+        with:
+          cordova-version: 8
+      - name: Build
+        run: |
+          npm install
+      - name: Run
+        run: |
+          ionic cordova build android
