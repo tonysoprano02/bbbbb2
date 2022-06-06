@@ -18,4 +18,4 @@ jobs:
           npm install
       - name: Add Platform
         run: |
-          ionic cordova platform add android --verbose
+          ionic cordova build android
